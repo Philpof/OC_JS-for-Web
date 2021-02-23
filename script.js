@@ -1,3 +1,5 @@
+////////// Partie : Modifiez le DOM //////////
+
 const newParagraph1 = document.createElement("p"); // createElement : permet de créer un nouvel élément du type spécifié entre parenthèse ("p", "div", "section", ...)
 const newParagraph2 = document.createElement("p");
 
@@ -18,3 +20,32 @@ newParagraph1.setAttribute("id", "coucou"); //setAttribute : créé un nouvelle 
 
 newParagraph2.style.color = "green"; // style : permet d'agir sur le style en modifiant la coleur par exemple
 
+
+////////// Partie : Écoutez des événements //////////
+
+const myParent = document.getElementById("parent");
+const countParent = document.getElementById("parent-count");
+const myChild = document.getElementById("child");
+const countChild = document.getElementById("child-count");
+
+myParent.addEventListener('click', function() { // addEventListener() : prend ('evenement écouté', la fonction à faire ou callback)
+    countParent.textContent ++;
+});
+
+myChild.addEventListener('click', function(event) {
+    event.stopPropagation(); // stopPropagation() : empèche l'évènement de remonter au "parent"
+    event.preventDefault(); // preventDefault() : empèche l'action initial de s'effectuer, par exemple le lien <a> est bloqué
+    countChild.textContent ++;
+});
+
+
+////////// Tests perso //////////
+
+const btnMulti = document.getElementById("btn");
+
+btnMulti.addEventListener('mouseover', function() {
+    btnMulti.style.backgroundColor = "yellow";
+    btnMulti.style.color = "black";
+    btnMulti.style.fontWeight = "bold";
+    btnMulti.style.fontSize = "large";
+});

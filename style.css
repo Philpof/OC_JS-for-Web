@@ -1,11 +1,5 @@
-article {
-    margin: auto;
-    margin-bottom: 20px;
-    width: 90%;
-    border: 1px solid black;
-    padding: 10px;
-}
 
+/* Partie : Modifiez le DOM */
 #main {
     font-weight:normal;
     color: blue;
@@ -14,4 +8,29 @@ article {
 .important {
     font-style: italic;
     color: red;
+}
+
+/* Partie : Écoutez des événements */
+article {
+    margin: auto;
+    border: 1px solid black;
+    padding: 20px;
+    width: 300px;
+}
+
+.link {
+    float: right;
+    margin-left: 30px;
+}
+
+span {
+    margin: 10px;
+}
+
+/* Tests perso */
+.btn {
+    background-color: grey;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: medium;
 }
