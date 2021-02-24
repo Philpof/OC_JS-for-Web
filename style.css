@@ -11,7 +11,7 @@
 }
 
 /* Partie : Écoutez des événements */
-article {
+#parent {
     margin: auto;
     border: 1px solid black;
     padding: 20px;
@@ -26,6 +26,21 @@ article {
 span {
     margin: 10px;
 }
+
+/* Partie : Récupérez des données utilisateur avec les événements */
+#body {
+    margin-top: 2rem;
+    padding: 50px;
+}
+
+form, #result {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
 
 /* Tests perso */
 .btn {

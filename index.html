@@ -12,7 +12,7 @@
         
     </div>
 
-    
+
     <!-- Partie : Écoutez des événements -->
     <article id="parent">
         <a class="link" id="child" href="testLien.html">Cliquez ici</a>
@@ -20,6 +20,30 @@
         Parent : <span id="parent-count">0</span>
         Enfant : <span id="child-count">0</span>
     </article>
+
+
+    <!-- Partie : Récupérez des données utilisateur avec les événements -->
+    <article id="body">  
+        <form>
+            <div><input type="text" id="name" placeholder="Nom" /></div>
+            <div>
+                <select id="gender">
+                    <option>Choisissez une valeur</option>
+                    <option value="Homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                    <option value="Autre">Autre</option>
+                </select>  
+            </div>
+        </form>
+        
+        <div id="result">
+            Nom : <span id="res-name"></span><br />
+            Genre : <span id="res-gender"></span><br />
+            Souris : (<span id="mouse-x"></span>, <span id="mouse-y"></span>)
+        </div>
+    </article>
+
+
 
 
     <!-- Tests perso -->

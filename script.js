@@ -34,8 +34,32 @@ myParent.addEventListener('click', function() { // addEventListener() : prend ('
 
 myChild.addEventListener('click', function(event) {
     event.stopPropagation(); // stopPropagation() : empèche l'évènement de remonter au "parent"
-    event.preventDefault(); // preventDefault() : empèche l'action initial de s'effectuer, par exemple le lien <a> est bloqué
+    event.preventDefault(); // preventDefault() : empèche le comportement par défaut de s'effectuer, par exemple le lien <a> est bloqué
     countChild.textContent ++;
+});
+
+
+////////// Partie : Récupérez des données utilisateur avec les événements //////////
+
+const myName = document.getElementById('name');
+const gender = document.getElementById('gender');
+const result = document.getElementById('result');
+const resName = document.getElementById('res-name');
+const resGender = document.getElementById('res-gender');
+const mouseX = document.getElementById('mouse-x');
+const mouseY = document.getElementById('mouse-y');
+
+myName.addEventListener('change', function(event) {
+    resName.textContent = event.target.value;
+});
+
+gender.addEventListener('change', function(event) {
+    resGender.textContent = event.target.value;
+});
+
+result.addEventListener('mousemove', function(event) {
+    mouseX.textContent = event.offsetX; // Coordonnée X de la souris dans l'élément
+    mouseY.textContent = event.offsetY; // Coordonnée Y de la souris dans l'élément
 });
 
 
