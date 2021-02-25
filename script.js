@@ -63,6 +63,33 @@ result.addEventListener('mousemove', function(event) {
 });
 
 
+////////// Partie : Récupérez des données d'un service web //////////
+
+const ask1 = document.getElementById("ask-weather1");
+const ask2 = document.getElementById("ask-weather2");
+const resultWeb = document.getElementById("weather-result");
+
+function askWeather(ville) {
+    var request = new XMLHttpRequest();
+    request.open("GET", `https://www.prevision-meteo.ch/services/json/${ville}`);
+    request.send();
+    request.onreadystatechange = function() {
+        if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+            response = JSON.parse(this.responseText);
+            resultWeb.textContent = response.current_condition.condition;
+        }
+    };
+};
+
+ask1.addEventListener('click', function () {
+    askWeather("paris");
+});
+
+ask2.addEventListener('click', function () {
+    askWeather("marseille");
+});
+
+
 ////////// Tests perso //////////
 
 const btnMulti = document.getElementById("btn");

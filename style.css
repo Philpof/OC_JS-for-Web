@@ -41,6 +41,23 @@ form, #result {
     border: 1px solid black;
 }
 
+/* Partie : Récupérez des données d'un service web */
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+#ask-weather1, #ask-weather2 {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+#weather-result {
+    text-align: center;
+    font-size: 24px;
+}
 
 /* Tests perso */
 .btn {
