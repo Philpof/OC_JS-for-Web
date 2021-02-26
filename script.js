@@ -70,8 +70,8 @@ const ask2 = document.getElementById("ask-weather2");
 const resultWeb = document.getElementById("weather-result");
 
 function askWeather(ville) {
-    var request = new XMLHttpRequest();
-    request.open("GET", `https://www.prevision-meteo.ch/services/json/${ville}`);
+    let request = new XMLHttpRequest();
+    request.open("GET", `https://www.prevision-meteo.ch/services/json/${ville}`); // les `` permet de faire de l'interpolation et de mettre le parametre dans la string
     request.send();
     request.onreadystatechange = function() {
         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
@@ -88,6 +88,24 @@ ask1.addEventListener('click', function () {
 ask2.addEventListener('click', function () {
     askWeather("marseille");
 });
+
+
+////////// Partie : Validez les données saisies par vos utilisateurs //////////
+
+const code = document.getElementById('code');
+const codeVal = document.getElementById('code-validation');
+const submitBtn = document.getElementById('submit-btn');
+
+code.addEventListener('input', function(e) {
+    let value = e.target.value;
+    if (/^CODE-/.test(value)) {
+        codeVal.textContent = "Code valide";
+        submitBtn.removeAttribute('disabled');
+    } else {
+        codeVal.textContent = "Code invalide";
+        submitBtn.setAttribute('disabled', true);
+    }
+})
 
 
 ////////// Tests perso //////////
