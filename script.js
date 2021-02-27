@@ -108,6 +108,32 @@ code.addEventListener('input', function(e) {
 })
 
 
+////////// Partie : Sauvegardez des données sur le service web //////////
+
+const value = document.getElementById('value');
+const resultPOST = document.getElementById('resultPOST');
+const form = document.getElementById('form');
+
+function sendPOST(value) {
+    let request = new XMLHttpRequest();
+    request.open("POST", "http://mockbin.com/request"); // Requête en POST
+    request.setRequestHeader("Content-Type", "application/json"); // le Header
+    request.send(JSON.stringify(value)); // Transforme le paramètre en JSON
+    request.onreadystatechange = function() { // Récupére la réponse
+        if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+            response = JSON.parse(this.responseText);
+            resultPOST.textContent = response.postData.text;
+        }
+    };
+}
+
+form.addEventListener('submit', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    sendPOST(value.value); // Prend la valeur de value et l'envoi en argument
+})
+
+
 ////////// Tests perso //////////
 
 const btnMulti = document.getElementById("btn");
