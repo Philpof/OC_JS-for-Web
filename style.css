@@ -87,6 +87,19 @@ form, #result {
     text-align: center;
 }
 
+/* Partie : Partie : Gérez du code asynchrone */
+#resultASYNC {
+    margin: auto;
+    margin-top: 40px;
+    font-size: 24px;
+    text-align: center;
+
+    margin-bottom: 20px;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
 /* Tests perso */
 .btn {
     background-color: grey;

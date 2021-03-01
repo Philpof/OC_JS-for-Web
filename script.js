@@ -134,6 +134,31 @@ form.addEventListener('submit', function(e) {
 })
 
 
+////////// Partie : Gérez du code asynchrone //////////
+
+let resultASYNC = document.getElementById('resultASYNC');
+
+async function getNumber1() {
+    return 10;
+}
+
+async function getNumber2() {
+    return 4;
+}
+
+async function compute() {
+    const value1 = await getNumber1();
+    const value2 = await getNumber2();
+    return value1 + value2;
+}
+
+compute()
+    .then(function(data) {
+        resultASYNC.textContent = data; 
+    })
+    .catch(function(err) {
+        resultASYNC.textContent = "Erreur";
+    });
 ////////// Tests perso //////////
 
 const btnMulti = document.getElementById("btn");
