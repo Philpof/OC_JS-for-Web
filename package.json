@@ -1,0 +1,23 @@
+{
+  "name": "oc_js-for-web",
+  "version": "1.0.0",
+  "description": "Cours OpenClassrooms : Écrivez du JavaScript pour le web",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Philpof/OC_JS-for-Web.git"
+  },
+  "author": "Philpof",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Philpof/OC_JS-for-Web/issues"
+  },
+  "homepage": "https://github.com/Philpof/OC_JS-for-Web#readme",
+  "devDependencies": {
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
